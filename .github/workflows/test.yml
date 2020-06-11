@@ -12,9 +12,9 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - run: |
-        export GOPATH=.gopath
-        mkdir -p .gopath/bin
-        export PATH=".gopath/bin:${PATH}"
+        export GOPATH="$(pwd)/.gopath"
+        mkdir -p "${GOPATH}/bin"
+        export PATH="${GOPATH}/bin:${PATH}"
         GO111MODULE=on go get github.com/weaveworks/footloose
         footloose
         npm install
