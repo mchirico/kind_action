@@ -13,7 +13,9 @@ jobs:
     - uses: actions/checkout@v1
     - run: |
         GO111MODULE=on go get github.com/weaveworks/footloose
-        echo $GOPATH
+        echo $PATH
+        pwd
+        df
         npm install
         npm run all
   test: # make sure the action works on a clean machine without building
