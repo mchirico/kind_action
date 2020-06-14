@@ -1,5 +1,5 @@
 import * as process from 'process'
-import {downloadAndReturnPath} from '../src/download-util-v0'
+import {downloadAndReturnPath} from './download-util-v0'
 import * as io from '@actions/io'
 import fs from 'fs'
 
