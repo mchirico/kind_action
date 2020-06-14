@@ -15,8 +15,6 @@ jobs:
         export GOPATH="$(pwd)/.gopath"
         mkdir -p "${GOPATH}/bin"
         export PATH="${GOPATH}/bin:${PATH}"
-#        GO111MODULE=on go get github.com/weaveworks/footloose
-#        footloose config create --replicas 3
         npm install
         npm run all
   test: # make sure the action works on a clean machine without building
