@@ -5,7 +5,7 @@ inputs:
   myInput:              # change this
     description: 'input description here'
     default: 'default value if applicable'
-  milliseconds: 3
+  milliseconds: '3'
 runs:
   using: 'node12'
   main: 'dist/index.js'
