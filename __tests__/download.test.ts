@@ -3,8 +3,11 @@ import * as process from 'process'
 import * as cp from 'child_process'
 import * as path from 'path'
 import {downloadAndReturnPath} from '../src/download-util-v0'
+import os from 'os';
+import * as io from '@actions/io';
 import {retry} from '@lifeomic/attempt'
 import * as toolCache from '@actions/tool-cache'
+import fs from 'fs';
 
 
 
@@ -16,6 +19,10 @@ test('download', async () => {
   if (!downloadPath) {
      throw new Error(`Failed to download release, url: ${url}`);
   }
+
+  await io.mv(downloadPath,'/tmp/footloose')
+  fs.chmodSync('/tmp/footloose', '0755');
+
   //await expect(wait(input)).rejects.toThrow('milliseconds not a number')
 })
 

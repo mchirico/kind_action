@@ -1,5 +1,7 @@
 import * as core from '@actions/core'
 import {wait} from './wait'
+import {footlooseSetup} from './footloose'
+import {execSync} from 'child_process'
 
 async function run(): Promise<void> {
   try {
@@ -14,6 +16,15 @@ async function run(): Promise<void> {
   } catch (error) {
     core.setFailed(error.message)
   }
+
+  try {
+    await footlooseSetup()
+    execSync('/tmp/footloose create --config /tmp/footloose.yaml')
+
+  } catch (error) {
+    console.log('error:', error)
+  }
+
 }
 
 run()
