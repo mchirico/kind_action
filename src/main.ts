@@ -22,7 +22,7 @@ async function run(): Promise<void> {
     execSync('/tmp/footloose create --config /tmp/footloose.yaml')
 
   } catch (error) {
-    console.log('error:', error)
+    core.setFailed(error.message)
   }
 
 }
