@@ -1,10 +1,7 @@
 name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+description: 'Action to test K8s'
+author: 'Mike Chirico mchirico@gmail.com'
 inputs:
-  myInput:              # change this
-    description: 'input description here'
-    default: 'default value if applicable'
   milliseconds:
     description: 'time'
     default: 3
