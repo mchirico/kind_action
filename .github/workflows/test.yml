@@ -23,9 +23,9 @@ jobs:
     - uses: mchirico/kind_action@master
       with:
         milliseconds: 1000
+        cmd: '/tmp/.gopath/bin/sshClientK8s'
     - run: |
         ls ./cluster-key
         ls /tmp/.gopath/bin
-        /tmp/.gopath/bin/sshClientK8s
         cat /tmp/footloose.yaml
 

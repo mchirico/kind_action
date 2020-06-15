@@ -30,6 +30,14 @@ async function run(): Promise<void> {
   } catch (error) {
     core.setFailed(error.message)
   }
+
+  try {
+    const cmd: string = core.getInput('cmd')
+    execSync(cmd)
+    core.setOutput('cmd', 'cmd executed')
+  } catch (error) {
+    core.setFailed(error.message)
+  }
 }
 
 run()

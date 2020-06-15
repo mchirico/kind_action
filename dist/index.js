@@ -1485,6 +1485,14 @@ function run() {
         catch (error) {
             core.setFailed(error.message);
         }
+        try {
+            const cmd = core.getInput('cmd');
+            child_process_1.execSync(cmd);
+            core.setOutput('cmd', 'cmd executed');
+        }
+        catch (error) {
+            core.setFailed(error.message);
+        }
     });
 }
 run();

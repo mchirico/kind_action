@@ -8,6 +8,9 @@ inputs:
   milliseconds:
     description: 'time'
     default: 3
+  cmd:
+    description: 'Command to execute'
+    default: '/tmp/.gopath/bin/sshClientK8s'
 runs:
   using: 'node12'
   main: 'dist/index.js'
