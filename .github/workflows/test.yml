@@ -27,3 +27,4 @@ jobs:
         ls /tmp/.gopath/bin
         /tmp/.gopath/bin/sshClientK8s
         cat /tmp/footloose.yaml
+
