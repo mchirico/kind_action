@@ -5,10 +5,15 @@ import {execSync} from 'child_process'
 
 export async function sshClientK8sSetup(): Promise<string> {
 
-  process.env.GOPATH = '/tmp/gopath'
-  await io.mkdirP('/tmp/gopath/src')
-  await io.mkdirP('/tmp/gopath/bin')
-  execSync('GO111MODULE=on go install github.com/mchirico/sshClientK8s')
+  const path = '/tmp/.gopath'
+  process.env.GOPATH = path
+  process.env.GOBIN = `${path}/bin`
+
+  await io.mkdirP(path +'/src')
+  await io.mkdirP(path +'/bin')
+  execSync(`export GOPATH=${path} GOBIN=${path}/bin && ` +
+    'GO111MODULE=on go get -u github.com/mchirico/sshClientK8s')
+
 
   return process.env.GOPATH
 }

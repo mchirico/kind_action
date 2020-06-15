@@ -11,9 +11,11 @@ import * as toolCache from '@actions/tool-cache'
 import fs from 'fs';
 
 test('sshClientK8sSetup', async () => {
-  const input = parseInt('foo', 10)
 
   await sshClientK8sSetup()
-  await expect(wait(input)).rejects.toThrow('milliseconds not a number')
+  const r = fs.statSync('/tmp/.gopath/bin/sshClientK8s')
+
+  await expect(r.size).toBeGreaterThan(929920)
+
 })
 
