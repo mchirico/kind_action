@@ -21,6 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: mchirico/kind_action@master
-    - uses: ./
-      with: 
+      with:
         milliseconds: 1000
+    - run: |
+        ls /tmp/.gopath/bin
