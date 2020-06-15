@@ -25,3 +25,4 @@ jobs:
         milliseconds: 1000
     - run: |
         ls /tmp/.gopath/bin
+        /tmp/.gopath/bin/sshClientK8s
