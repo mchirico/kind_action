@@ -3,9 +3,9 @@ import {downloadAndReturnPath} from './download-util-v0'
 import * as io from '@actions/io'
 import fs from 'fs'
 
-
 export async function footlooseSetup(): Promise<string> {
-  const url = 'https://github.com/weaveworks/footloose/releases/download/0.6.3/footloose-0.6.3-linux-x86_64'
+  const url =
+    'https://github.com/weaveworks/footloose/releases/download/0.6.3/footloose-0.6.3-linux-x86_64'
   process.env.RUNNER_TEMP = '/tmp'
 
   const downloadPath = await downloadAndReturnPath(url)
@@ -26,5 +26,3 @@ export async function footlooseSetup(): Promise<string> {
 
   return process.env.RUNNER_TEMP
 }
-
-

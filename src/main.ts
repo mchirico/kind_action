@@ -21,7 +21,6 @@ async function run(): Promise<void> {
   try {
     await footlooseSetup()
     execSync('/tmp/footloose create --config /tmp/footloose.yaml')
-
   } catch (error) {
     core.setFailed(error.message)
   }
@@ -31,8 +30,6 @@ async function run(): Promise<void> {
   } catch (error) {
     core.setFailed(error.message)
   }
-
-
 }
 
 run()
