@@ -1,6 +1,7 @@
 import * as core from '@actions/core'
 import {wait} from './wait'
 import {footlooseSetup} from './footloose'
+import {sshClientK8sSetup} from './sshClientK8s'
 import {execSync} from 'child_process'
 
 async function run(): Promise<void> {
@@ -24,6 +25,13 @@ async function run(): Promise<void> {
   } catch (error) {
     core.setFailed(error.message)
   }
+
+  try {
+    await sshClientK8sSetup()
+  } catch (error) {
+    core.setFailed(error.message)
+  }
+
 
 }
 

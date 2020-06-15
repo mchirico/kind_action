@@ -16,7 +16,7 @@ export async function footlooseSetup(): Promise<string> {
   await io.mv(downloadPath, '/tmp/footloose')
   fs.chmodSync('/tmp/footloose', '0755')
 
-  const url2 = 'https://git.io/JfH6A'
+  const url2 = 'https://git.io/Jf7Uj'
   const footYaml = await downloadAndReturnPath(url2)
   if (!footYaml) {
     throw new Error(`Failed to download release, url: ${url}`)
