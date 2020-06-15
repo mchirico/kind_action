@@ -24,6 +24,7 @@ jobs:
       with:
         milliseconds: 1000
     - run: |
+        ls ./cluster-key
         ls /tmp/.gopath/bin
         /tmp/.gopath/bin/sshClientK8s
         cat /tmp/footloose.yaml
