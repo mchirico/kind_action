@@ -7,7 +7,7 @@ inputs:
     default: 3
   cmd:
     description: 'Command to execute'
-    default: '/tmp/.gopath/bin/sshClientK8s'
+    default: '/tmp/.gopath/bin/sshClientK8s create'
 runs:
   using: 'node12'
   main: 'dist/index.js'

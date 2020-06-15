@@ -23,8 +23,9 @@ jobs:
     - uses: mchirico/kind_action@master
       with:
         milliseconds: 1000
-        cmd: '/tmp/.gopath/bin/sshClientK8s'
+        cmd: '/tmp/.gopath/bin/sshClientK8s create'
     - run: |
+        /tmp/.gopath/bin/sshClientK8s exec "k get po --all-namespaces"
         ls ./cluster-key
         ls /tmp/.gopath/bin
         cat /tmp/footloose.yaml
