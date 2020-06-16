@@ -25,8 +25,9 @@ jobs:
         milliseconds: 1000
         cmd: '/tmp/.gopath/bin/sshClientK8s create'
     - run: |
-        /tmp/.gopath/bin/sshClientK8s exec "k get po --all-namespaces"
+        #/tmp/.gopath/bin/sshClientK8s exec "k get po --all-namespaces"
+        /tmp/.gopath/bin/sshClientK8s
         ls ./cluster-key
-        ls /tmp/.gopath/bin
+        ls -l /tmp/.gopath/bin
         cat /tmp/footloose.yaml
 
