@@ -26,6 +26,7 @@ jobs:
         cmd: '/tmp/.gopath/bin/sshClientK8s create'
     - run: |
         /tmp/.gopath/bin/sshClientK8s
+        /tmp/.gopath/bin/sshClientK8s version
         ls ./cluster-key
         ls -l /tmp/.gopath/bin
         cat /tmp/footloose.yaml
