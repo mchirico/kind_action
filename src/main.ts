@@ -11,30 +11,17 @@ async function run(): Promise<void> {
 
     core.debug(new Date().toTimeString())
     await wait(parseInt(ms, 10))
-    core.debug(new Date().toTimeString())
 
     core.setOutput('time', new Date().toTimeString())
-  } catch (error) {
-    core.setFailed(error.message)
-  }
 
-  try {
     await footlooseSetup()
     execSync('/tmp/footloose create --config /tmp/footloose.yaml')
-  } catch (error) {
-    core.setFailed(error.message)
-  }
 
-  try {
     await sshClientK8sSetup()
-  } catch (error) {
-    core.setFailed(error.message)
-  }
 
-  try {
     const cmd: string = core.getInput('cmd')
     execSync(cmd)
-    core.setOutput('cmd', 'cmd executed')
+    core.setOutput('cmd executed', cmd)
   } catch (error) {
     core.setFailed(error.message)
   }

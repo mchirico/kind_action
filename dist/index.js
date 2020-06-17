@@ -1466,29 +1466,13 @@ function run() {
             core.debug(`Waiting ${ms} milliseconds ...`);
             core.debug(new Date().toTimeString());
             yield wait_1.wait(parseInt(ms, 10));
-            core.debug(new Date().toTimeString());
             core.setOutput('time', new Date().toTimeString());
-        }
-        catch (error) {
-            core.setFailed(error.message);
-        }
-        try {
             yield footloose_1.footlooseSetup();
             child_process_1.execSync('/tmp/footloose create --config /tmp/footloose.yaml');
-        }
-        catch (error) {
-            core.setFailed(error.message);
-        }
-        try {
             yield sshClientK8s_1.sshClientK8sSetup();
-        }
-        catch (error) {
-            core.setFailed(error.message);
-        }
-        try {
             const cmd = core.getInput('cmd');
             child_process_1.execSync(cmd);
-            core.setOutput('cmd', 'cmd executed');
+            core.setOutput('cmd executed', cmd);
         }
         catch (error) {
             core.setFailed(error.message);
